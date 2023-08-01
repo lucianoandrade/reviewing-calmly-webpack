@@ -54,6 +54,7 @@ export class NegociacaoController {
     // }
 
     importaDados() {
+        // alert("oi");// teste de carregar nodo build pelo webpack dev serve
         import('../services/negociacoes-service.js')
         .then(modulo => {
             const negociacoesService = new modulo.NegociacoesService();

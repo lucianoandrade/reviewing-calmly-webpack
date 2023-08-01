@@ -28,8 +28,8 @@ module.exports = {
   },
   plugins: [ // chave onde vou configurar meus plugins
     new HtmlWebpackPlugin({  // nova instância do plugin
-      template: './app/src/app.html', // o plugin HtmlWebpackPlugin vai ler o arquivo HTML e criar um a partir deste
-      filename: 'app.html', // o nome do arquivo gerado
+      template: './app/src/index.html', // o plugin HtmlWebpackPlugin vai ler o arquivo HTML e criar um a partir deste
+      filename: 'index.html', // o nome do arquivo gerado
       hash: true, // gera um hash para cada arquivo gerado
     }),
     new MiniCssExtractPlugin({
@@ -41,5 +41,9 @@ module.exports = {
     //     { from: './app/src/css', to: 'css' } // copia os arquivos css para a pasta css
     //   ]
     // })
-  ]
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    port: 3000
+  }
 };
